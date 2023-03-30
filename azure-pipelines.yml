@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+- task: Joy.ApplicationSecurity-VSTS-Dev.custom-ase-task.HCL AppScan Enterprise@2
+  displayName: 'Run HCL AppScan Enterprise Security Test'
+  inputs:
+    ServiceEndPointAse: 'ASE_Kripa_Joy'
+    jobName: test
+    folderId: 1
+    templateId: 2
+    testPolicyId: 3
+    loginMethod: None
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
