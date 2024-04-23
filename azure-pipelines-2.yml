@@ -21,7 +21,7 @@ steps:
   inputs:
     AppSecTestService: 'ASoCProduction'
     applications: 'c77eb298-9b34-4aef-801f-d404a6960f43'
-    scanname: 'StageYaml'
+    scanname: 'StageYaml1'
     scantype: 'dynamic'
     dynamicType: 'DAST'
     scanURL: 'https://demo.testfire.net/'
